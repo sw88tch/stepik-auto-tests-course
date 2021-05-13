@@ -23,5 +23,5 @@ def test(browser, url):
     browser.find_element_by_css_selector('textarea').send_keys(str(answer))
     browser.find_element_by_class_name('submit-submission').click()
     wait.until(EC.presence_of_element_located((By.CLASS_NAME, 'smart-hints__feedback')))
-    correct_checker = browser.find_element_by_class_name('smart-hints__feedback').text
-    assert correct_checker == 'Correct!', f"Message -> {correct_checker}"
+    correct_answer = browser.find_element_by_class_name('smart-hints__feedback').text
+    assert correct_answer == 'Correct!', f"Message -> {correct_answer}"
